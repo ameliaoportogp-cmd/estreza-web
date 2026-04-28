@@ -19,6 +19,7 @@
 
 # production
 /build
+/deploy/exclusivehosting/web-destrezasv-standalone
 
 # misc
 .DS_Store
