@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
+import DestrezaLogo from "@/components/DestrezaLogo";
 import ProfessionalIcon from "@/components/ProfessionalIcon";
 
 const links = {
@@ -33,15 +33,17 @@ export default function Footer() {
       {/* ── Banda superior teal ── */}
       <div style={{ height: 3, background: "linear-gradient(90deg, var(--teal) 0%, var(--gold) 50%, var(--teal) 100%)" }} />
 
-      <div className="container" style={{ padding: "60px 24px 28px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1.2fr", gap: 48, marginBottom: 48 }}>
+      <div className="container" style={{ padding: "68px 24px 30px" }}>
+        <div className="responsive-grid-2" style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1.2fr", gap: 48, marginBottom: 48 }}>
 
           {/* ── Brand ── */}
           <div>
             <div style={{ marginBottom: 20 }}>
-              <Image src="/logo.png" alt="Destreza" width={196} height={48} style={{ height: 48, width: "auto", filter: "brightness(0) invert(1)", opacity: 0.9 }} />
+              <div style={{ opacity: 0.92 }}>
+                <DestrezaLogo variant="white" height={54} showTagline={false} />
+              </div>
             </div>
-            <p style={{ fontSize: "0.87rem", lineHeight: 1.8, color: "rgba(255,255,255,0.45)", marginBottom: 24, maxWidth: 260 }}>
+            <p style={{ fontSize: "0.98rem", lineHeight: 1.82, color: "rgba(255,255,255,0.62)", marginBottom: 24, maxWidth: 320 }}>
               Más de 20 años acompañando a instituciones financieras en El Salvador en cumplimiento normativo, auditoría y transformación digital.
             </p>
             {/* Sociales */}
@@ -59,14 +61,14 @@ export default function Footer() {
 
           {/* ── Servicios ── */}
           <div>
-            <h4 style={{ color: "var(--teal-light)", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18 }}>Servicios</h4>
+            <h4 style={{ color: "var(--teal-light)", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18 }}>Servicios</h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
               {links.servicios.map(([label, href]) => (
                 <li key={href}>
                   <Link href={href}
-                    style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.45)", transition: "var(--transition)", display: "flex", alignItems: "center", gap: 6 }}
+                    style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.62)", transition: "var(--transition)", display: "flex", alignItems: "center", gap: 6 }}
                     onMouseOver={e => (e.currentTarget.style.color = "var(--gold)")}
-                    onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}>
+                    onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.62)")}>
                     <span style={{ color: "var(--teal)", display: "inline-flex" }}><ProfessionalIcon name="arrow-right" size={12} /></span>{label}
                   </Link>
                 </li>
@@ -76,14 +78,14 @@ export default function Footer() {
 
           {/* ── Academia ── */}
           <div>
-            <h4 style={{ color: "var(--teal-light)", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18 }}>Academia</h4>
+            <h4 style={{ color: "var(--teal-light)", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18 }}>Academia</h4>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
               {links.academia.map(([label, href]) => (
                 <li key={href}>
                   <Link href={href}
-                    style={{ fontSize: "0.87rem", color: "rgba(255,255,255,0.45)", transition: "var(--transition)", display: "flex", alignItems: "center", gap: 6 }}
+                    style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.62)", transition: "var(--transition)", display: "flex", alignItems: "center", gap: 6 }}
                     onMouseOver={e => (e.currentTarget.style.color = "var(--gold)")}
-                    onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}>
+                    onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.62)")}>
                     <span style={{ color: "var(--teal)", display: "inline-flex" }}><ProfessionalIcon name="arrow-right" size={12} /></span>{label}
                   </Link>
                 </li>
@@ -93,7 +95,7 @@ export default function Footer() {
 
           {/* ── Contacto ── */}
           <div>
-            <h4 style={{ color: "var(--teal-light)", fontWeight: 700, fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18 }}>Contacto</h4>
+            <h4 style={{ color: "var(--teal-light)", fontWeight: 700, fontSize: "0.82rem", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 18 }}>Contacto</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 24 }}>
               {[
                 ["phone", "+503 7742-5385"],
@@ -103,11 +105,11 @@ export default function Footer() {
               ].map(([icon, text]) => (
                 <div key={text} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                   <span style={{ color: "var(--gold-light)", flexShrink: 0, marginTop: 1 }}><ProfessionalIcon name={icon as "phone" | "mail" | "location" | "clock"} size={16} /></span>
-                  <span style={{ fontSize: "0.84rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.5 }}>{text}</span>
+                  <span style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.65 }}>{text}</span>
                 </div>
               ))}
             </div>
-            <Link href="/prueba-gratis" className="btn-primary" style={{ fontSize: "0.82rem", padding: "10px 20px" }}>
+            <Link href="/prueba-gratis" className="btn-primary" style={{ fontSize: "0.9rem", padding: "11px 20px" }}>
               Prueba Gratis →
             </Link>
           </div>
@@ -115,15 +117,15 @@ export default function Footer() {
 
         {/* ── Bottom bar ── */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 22, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.25)" }}>
+          <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.38)" }}>
             © {new Date().getFullYear()} Destreza Formación y Consultoría. Todos los derechos reservados.
           </p>
           <div style={{ display: "flex", gap: 20 }}>
             {[["Privacidad", "/privacidad"], ["Términos", "/terminos"]].map(([label, href]) => (
               <Link key={href} href={href}
-                style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.25)", transition: "var(--transition)" }}
+                style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.38)", transition: "var(--transition)" }}
                 onMouseOver={e => (e.currentTarget.style.color = "var(--teal-light)")}
-                onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.25)")}>
+                onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.38)")}>
                 {label}
               </Link>
             ))}

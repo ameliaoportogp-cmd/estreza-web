@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import DestrezaLogo from "@/components/DestrezaLogo";
 import ProfessionalIcon from "@/components/ProfessionalIcon";
 
 const servicios = [
@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top bar */}
-      <div style={{ background: "#10243B", color: "rgba(255,255,255,0.82)", fontSize: "0.8rem", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+      <div style={{ background: "#10243B", color: "rgba(255,255,255,0.86)", fontSize: "0.88rem", padding: "11px 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}><ProfessionalIcon name="phone" size={15} /> +503 7742-5385</span>
@@ -88,14 +88,14 @@ export default function Navbar() {
           boxShadow: scrolled ? "var(--shadow-sm)" : "none",
         }}
       >
-        <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 24px" }}>
+        <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 24px" }}>
           {/* Logo */}
           <Link href="/" onClick={closeMenus} style={{ display: "flex", alignItems: "center" }}>
-            <Image src="/logo.png" alt="Destreza Formación y Consultoría" width={180} height={44} priority style={{ height: 44, width: "auto", objectFit: "contain" }} />
+            <DestrezaLogo variant="full" height={58} showTagline={false} />
           </Link>
 
           {/* Desktop nav */}
-          <nav style={{ display: "flex", alignItems: "center", gap: 4 }} className="hidden-mobile">
+          <nav style={{ display: "flex", alignItems: "center", gap: 6 }} className="hidden-mobile">
             <NavItem href="/" label="Inicio" active={pathname === "/"} onNavigate={closeMenus} />
 
             {/* Servicios dropdown */}
@@ -104,9 +104,9 @@ export default function Navbar() {
                 onClick={() => setActiveDropdown(activeDropdown === "servicios" ? null : "servicios")}
                 style={{
                   display: "flex", alignItems: "center", gap: 4,
-                  padding: "8px 14px", borderRadius: 8, border: "none", background: "transparent",
-                  fontFamily: "var(--font-body)", fontSize: "0.9rem", fontWeight: 500,
-                  color: isActive("/servicios") ? "var(--gold)" : "var(--gray-800)",
+                  padding: "10px 14px", borderRadius: 10, border: "none", background: isActive("/servicios") ? "var(--gold-soft)" : "transparent",
+                  fontFamily: "var(--font-body)", fontSize: "0.95rem", fontWeight: 600,
+                  color: isActive("/servicios") ? "var(--navy)" : "var(--gray-600)",
                   cursor: "pointer", transition: "var(--transition)"
                 }}
               >
@@ -124,9 +124,9 @@ export default function Navbar() {
                 onClick={() => setActiveDropdown(activeDropdown === "academia" ? null : "academia")}
                 style={{
                   display: "flex", alignItems: "center", gap: 4,
-                  padding: "8px 14px", borderRadius: 8, border: "none", background: "transparent",
-                  fontFamily: "var(--font-body)", fontSize: "0.9rem", fontWeight: 500,
-                  color: isActive("/academia") ? "var(--gold)" : "var(--gray-800)",
+                  padding: "10px 14px", borderRadius: 10, border: "none", background: isActive("/academia") ? "var(--gold-soft)" : "transparent",
+                  fontFamily: "var(--font-body)", fontSize: "0.95rem", fontWeight: 600,
+                  color: isActive("/academia") ? "var(--navy)" : "var(--gray-600)",
                   cursor: "pointer", transition: "var(--transition)"
                 }}
               >
@@ -145,10 +145,10 @@ export default function Navbar() {
 
           {/* CTA buttons */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }} className="hidden-mobile">
-            <Link href="/login" onClick={closeMenus} className="btn-outline" style={{ padding: "9px 20px", fontSize: "0.85rem" }}>
+            <Link href="/login" onClick={closeMenus} className="btn-outline" style={{ padding: "10px 20px", fontSize: "0.9rem" }}>
               Iniciar Sesión
             </Link>
-            <Link href="/prueba-gratis" onClick={closeMenus} className="btn-primary" style={{ padding: "9px 20px", fontSize: "0.85rem" }}>
+            <Link href="/prueba-gratis" onClick={closeMenus} className="btn-primary" style={{ padding: "10px 20px", fontSize: "0.9rem" }}>
               Prueba Gratis
             </Link>
           </div>
@@ -200,8 +200,8 @@ function NavItem({ href, label, active, onNavigate }: { href: string; label: str
       href={href}
       onClick={onNavigate}
       style={{
-        padding: "8px 14px", borderRadius: 8,
-        fontSize: "0.9rem", fontWeight: 600,
+        padding: "10px 14px", borderRadius: 10,
+        fontSize: "0.95rem", fontWeight: 600,
         color: active ? "var(--teal)" : "var(--gray-600)",
         transition: "var(--transition)",
         background: active ? "var(--teal-soft)" : "transparent",
@@ -221,7 +221,7 @@ function Dropdown({ items, onClose }: { items: { label: string; href: string; ic
       position: "absolute", top: "calc(100% + 8px)", left: 0,
       background: "var(--white)", borderRadius: 12,
       border: "1px solid var(--gray-100)", boxShadow: "var(--shadow-lg)",
-      minWidth: 240, padding: "8px", zIndex: 999,
+      minWidth: 256, padding: "10px", zIndex: 999,
     }}>
       {items.map(item => (
         <Link
@@ -230,8 +230,8 @@ function Dropdown({ items, onClose }: { items: { label: string; href: string; ic
           onClick={onClose}
           style={{
             display: "flex", alignItems: "center", gap: 10,
-            padding: "10px 14px", borderRadius: 8,
-            fontSize: "0.88rem", fontWeight: 500, color: "var(--gray-800)",
+            padding: "11px 14px", borderRadius: 10,
+            fontSize: "0.92rem", fontWeight: 500, color: "var(--gray-800)",
             transition: "var(--transition)",
           }}
           onMouseOver={e => { e.currentTarget.style.background = "var(--gray-50)"; e.currentTarget.style.color = "var(--navy)"; }}
@@ -247,7 +247,7 @@ function Dropdown({ items, onClose }: { items: { label: string; href: string; ic
 
 function MobileLink({ href, label, onNavigate }: { href: string; label: string; onNavigate: () => void }) {
   return (
-    <Link href={href} onClick={onNavigate} style={{ display: "block", padding: "10px 0", fontSize: "0.95rem", fontWeight: 500, color: "var(--gray-800)", borderBottom: "1px solid var(--gray-100)" }}>
+    <Link href={href} onClick={onNavigate} style={{ display: "block", padding: "12px 0", fontSize: "1rem", fontWeight: 500, color: "var(--gray-800)", borderBottom: "1px solid var(--gray-100)" }}>
       {label}
     </Link>
   );
@@ -259,14 +259,14 @@ function MobileSection({ label, items, onNavigate }: { label: string; items: { l
     <div style={{ borderBottom: "1px solid var(--gray-100)" }}>
       <button
         onClick={() => setOpen(!open)}
-        style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 0", fontSize: "0.95rem", fontWeight: 500, color: "var(--gray-800)", background: "none", border: "none", cursor: "pointer" }}
+        style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0", fontSize: "1rem", fontWeight: 500, color: "var(--gray-800)", background: "none", border: "none", cursor: "pointer" }}
       >
         {label} <span style={{ fontSize: "0.75rem" }}>{open ? "▲" : "▾"}</span>
       </button>
       {open && (
         <div style={{ paddingBottom: 8, paddingLeft: 12 }}>
           {items.map(item => (
-            <Link key={item.href} href={item.href} onClick={onNavigate} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", fontSize: "0.88rem", color: "var(--gray-600)" }}>
+            <Link key={item.href} href={item.href} onClick={onNavigate} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 0", fontSize: "0.94rem", color: "var(--gray-600)" }}>
               <span style={{ color: "var(--teal)" }}><ProfessionalIcon name={item.icon} size={16} /></span>{item.label}
             </Link>
           ))}
