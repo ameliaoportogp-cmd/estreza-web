@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top bar */}
-      <div style={{ background: "#10243B", color: "rgba(255,255,255,0.86)", fontSize: "0.88rem", padding: "11px 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+      <div style={{ background: "#10243B", color: "rgba(255,255,255,0.92)", fontSize: "0.94rem", padding: "11px 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}><ProfessionalIcon name="phone" size={15} /> +503 7742-5385</span>
@@ -65,9 +65,9 @@ export default function Navbar() {
               { href: "https://linkedin.com", icon: "linkedin" as const },
               { href: "https://youtube.com", icon: "youtube" as const },
             ].map((item) => (
-              <a key={item.icon} href={item.href} target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.58)", transition: "var(--transition)" }}
+              <a key={item.icon} href={item.href} target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.72)", transition: "var(--transition)" }}
                  onMouseOver={e => (e.currentTarget.style.color = "var(--gold-light)")}
-                 onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.58)")}>
+                 onMouseOut={e => (e.currentTarget.style.color = "rgba(255,255,255,0.72)")}>
                 <ProfessionalIcon name={item.icon} size={16} />
               </a>
             ))}
@@ -105,13 +105,13 @@ export default function Navbar() {
                 style={{
                   display: "flex", alignItems: "center", gap: 4,
                   padding: "10px 14px", borderRadius: 10, border: "none", background: isActive("/servicios") ? "var(--gold-soft)" : "transparent",
-                  fontFamily: "var(--font-body)", fontSize: "0.95rem", fontWeight: 600,
+                  fontFamily: "var(--font-body)", fontSize: "1rem", fontWeight: 600,
                   color: isActive("/servicios") ? "var(--navy)" : "var(--gray-600)",
                   cursor: "pointer", transition: "var(--transition)"
                 }}
               >
                 Servicios
-                <span style={{ fontSize: "0.7rem", transition: "var(--transition)", transform: activeDropdown === "servicios" ? "rotate(180deg)" : "none" }}>▾</span>
+                <span style={{ fontSize: "0.8rem", transition: "var(--transition)", transform: activeDropdown === "servicios" ? "rotate(180deg)" : "none" }}>▾</span>
               </button>
               {activeDropdown === "servicios" && (
                 <Dropdown items={servicios} onClose={() => setActiveDropdown(null)} />
@@ -125,13 +125,13 @@ export default function Navbar() {
                 style={{
                   display: "flex", alignItems: "center", gap: 4,
                   padding: "10px 14px", borderRadius: 10, border: "none", background: isActive("/academia") ? "var(--gold-soft)" : "transparent",
-                  fontFamily: "var(--font-body)", fontSize: "0.95rem", fontWeight: 600,
+                  fontFamily: "var(--font-body)", fontSize: "1rem", fontWeight: 600,
                   color: isActive("/academia") ? "var(--navy)" : "var(--gray-600)",
                   cursor: "pointer", transition: "var(--transition)"
                 }}
               >
                 Academia
-                <span style={{ fontSize: "0.7rem", transition: "var(--transition)", transform: activeDropdown === "academia" ? "rotate(180deg)" : "none" }}>▾</span>
+                <span style={{ fontSize: "0.8rem", transition: "var(--transition)", transform: activeDropdown === "academia" ? "rotate(180deg)" : "none" }}>▾</span>
               </button>
               {activeDropdown === "academia" && (
                 <Dropdown items={academia} onClose={() => setActiveDropdown(null)} />
@@ -145,10 +145,10 @@ export default function Navbar() {
 
           {/* CTA buttons */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }} className="hidden-mobile">
-            <Link href="/login" onClick={closeMenus} className="btn-outline" style={{ padding: "10px 20px", fontSize: "0.9rem" }}>
+            <Link href="/login" onClick={closeMenus} className="btn-outline" style={{ padding: "11px 22px", fontSize: "0.98rem" }}>
               Iniciar Sesión
             </Link>
-            <Link href="/prueba-gratis" onClick={closeMenus} className="btn-primary" style={{ padding: "10px 20px", fontSize: "0.9rem" }}>
+            <Link href="/prueba-gratis" onClick={closeMenus} className="btn-primary" style={{ padding: "11px 22px", fontSize: "0.98rem" }}>
               Prueba Gratis
             </Link>
           </div>
@@ -201,7 +201,7 @@ function NavItem({ href, label, active, onNavigate }: { href: string; label: str
       onClick={onNavigate}
       style={{
         padding: "10px 14px", borderRadius: 10,
-        fontSize: "0.95rem", fontWeight: 600,
+        fontSize: "1rem", fontWeight: 600,
         color: active ? "var(--teal)" : "var(--gray-600)",
         transition: "var(--transition)",
         background: active ? "var(--teal-soft)" : "transparent",
@@ -231,7 +231,7 @@ function Dropdown({ items, onClose }: { items: { label: string; href: string; ic
           style={{
             display: "flex", alignItems: "center", gap: 10,
             padding: "11px 14px", borderRadius: 10,
-            fontSize: "0.92rem", fontWeight: 500, color: "var(--gray-800)",
+            fontSize: "0.98rem", fontWeight: 500, color: "var(--gray-800)",
             transition: "var(--transition)",
           }}
           onMouseOver={e => { e.currentTarget.style.background = "var(--gray-50)"; e.currentTarget.style.color = "var(--navy)"; }}
@@ -261,12 +261,12 @@ function MobileSection({ label, items, onNavigate }: { label: string; items: { l
         onClick={() => setOpen(!open)}
         style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0", fontSize: "1rem", fontWeight: 500, color: "var(--gray-800)", background: "none", border: "none", cursor: "pointer" }}
       >
-        {label} <span style={{ fontSize: "0.75rem" }}>{open ? "▲" : "▾"}</span>
+        {label} <span style={{ fontSize: "0.82rem" }}>{open ? "▲" : "▾"}</span>
       </button>
       {open && (
         <div style={{ paddingBottom: 8, paddingLeft: 12 }}>
           {items.map(item => (
-            <Link key={item.href} href={item.href} onClick={onNavigate} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 0", fontSize: "0.94rem", color: "var(--gray-600)" }}>
+            <Link key={item.href} href={item.href} onClick={onNavigate} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", fontSize: "0.98rem", color: "var(--gray-600)" }}>
               <span style={{ color: "var(--teal)" }}><ProfessionalIcon name={item.icon} size={16} /></span>{item.label}
             </Link>
           ))}

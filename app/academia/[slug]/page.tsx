@@ -65,10 +65,10 @@ export default async function AcademiaDetallePage({ params }: { params: Promise<
         <div className="container" style={{ maxWidth: 1100 }}>
           <div className="chip" style={{ marginBottom: 18 }}>Academia Destreza</div>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", color: "#fff", marginBottom: 16 }}>{categoria.titulo}</h1>
-          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.05rem", lineHeight: 1.85, maxWidth: 720, marginBottom: 26 }}>{categoria.descripcion}</p>
+          <p style={{ color: "rgba(255,255,255,0.84)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 760, marginBottom: 26 }}>{categoria.descripcion}</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             {categoria.ventajas.map((item) => (
-              <span key={item} style={{ padding: "10px 16px", borderRadius: 999, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", color: "rgba(255,255,255,0.9)", fontSize: "0.85rem" }}>
+              <span key={item} style={{ padding: "10px 16px", borderRadius: 999, background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.16)", color: "rgba(255,255,255,0.94)", fontSize: "0.94rem" }}>
                 {item}
               </span>
             ))}
@@ -87,7 +87,7 @@ export default async function AcademiaDetallePage({ params }: { params: Promise<
               <p style={{ color: "var(--gray-600)", lineHeight: 1.85 }}>{categoria.enfoque}</p>
             </div>
             <div className="card" style={{ borderTop: `3px solid ${categoria.color}` }}>
-              <div style={{ color: categoria.color, fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>Qué incluye</div>
+              <div style={{ color: categoria.color, fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 12 }}>Qué incluye</div>
               <ul style={{ listStyle: "none", display: "grid", gap: 12, color: "var(--gray-600)" }}>
                 {categoria.incluye.map((item) => (
                   <li key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start", lineHeight: 1.8 }}>

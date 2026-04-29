@@ -67,7 +67,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex; align-items: center; gap: 8px;
   background: linear-gradient(135deg, var(--gold) 0%, #E8B828 100%);
   color: #101B2B;
-  font-family: var(--font-body); font-weight: 700; font-size: 0.96rem;
+  font-family: var(--font-body); font-weight: 700; font-size: 1rem;
   padding: 14px 30px; border-radius: 10px; border: none;
   cursor: pointer; transition: var(--transition); white-space: nowrap;
   box-shadow: 0 4px 14px rgba(212, 160, 32, 0.3);
@@ -82,7 +82,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex; align-items: center; gap: 8px;
   background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
   color: #fff;
-  font-family: var(--font-body); font-weight: 700; font-size: 0.96rem;
+  font-family: var(--font-body); font-weight: 700; font-size: 1rem;
   padding: 14px 30px; border-radius: 10px; border: none;
   cursor: pointer; transition: var(--transition); white-space: nowrap;
   box-shadow: var(--shadow-teal);
@@ -92,7 +92,7 @@ img { max-width: 100%; display: block; }
 .btn-outline {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(255,255,255,0.85); color: var(--navy);
-  font-family: var(--font-body); font-weight: 650; font-size: 0.95rem;
+  font-family: var(--font-body); font-weight: 650; font-size: 1rem;
   padding: 14px 28px; border-radius: 10px;
   border: 1.5px solid var(--gray-200);
   cursor: pointer; transition: var(--transition); white-space: nowrap;
@@ -118,14 +118,14 @@ img { max-width: 100%; display: block; }
 .chip {
   display: inline-block;
   background: var(--gold-soft); color: var(--gold);
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em;
+  font-size: 0.84rem; font-weight: 700; letter-spacing: 0.09em;
   text-transform: uppercase; padding: 4px 14px; border-radius: 100px;
   border: 1px solid rgba(212,160,32,0.25);
 }
 .chip-teal {
   display: inline-block;
   background: var(--teal-soft); color: var(--teal);
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em;
+  font-size: 0.84rem; font-weight: 700; letter-spacing: 0.09em;
   text-transform: uppercase; padding: 4px 14px; border-radius: 100px;
   border: 1px solid rgba(30,122,136,0.25);
 }
@@ -154,7 +154,7 @@ img { max-width: 100%; display: block; }
 .service-grid-item { background: var(--white); transition: var(--transition); }
 .service-grid-item:hover { background: var(--navy) !important; }
 .service-grid-item:hover .svc-title { color: var(--white) !important; }
-.service-grid-item:hover .svc-desc  { color: rgba(255,255,255,0.55) !important; }
+.service-grid-item:hover .svc-desc  { color: rgba(255,255,255,0.8) !important; }
 .service-grid-item:hover .svc-num   { color: rgba(255,255,255,0.1) !important; }
 .service-grid-item:hover .svc-arrow { color: var(--gold) !important; }
 

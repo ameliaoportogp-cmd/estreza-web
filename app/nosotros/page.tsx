@@ -13,7 +13,7 @@ export default function NosotrosPage() {
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,3rem)", color: "#fff", marginBottom: 16 }}>
             Más de 20 años al servicio<br />del sector financiero
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.76)", fontSize: "1.1rem", maxWidth: 580, lineHeight: 1.82 }}>
+          <p style={{ color: "rgba(255,255,255,0.86)", fontSize: "1.14rem", maxWidth: 620, lineHeight: 1.82 }}>
             Consultora salvadoreña especializada en cumplimiento normativo, auditoría de sistemas y capacitación para instituciones del sistema financiero.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function NosotrosPage() {
                   <div key={t} style={{ padding: "20px", background: "var(--gray-50)", borderRadius: 12, borderLeft: "3px solid var(--teal)" }}>
                     <div style={{ marginBottom: 12 }}><IconBadge name={icon as "location" | "institutions"} tone={tone as "teal" | "gold"} size={18} /></div>
                     <div style={{ fontWeight: 700, color: "var(--navy)", fontSize: "1rem" }}>{t}</div>
-                    <div style={{ fontSize: "0.95rem", color: "var(--gray-600)", marginTop: 6, lineHeight: 1.65 }}>{d}</div>
+                  <div style={{ fontSize: "1rem", color: "var(--gray-600)", marginTop: 6, lineHeight: 1.65 }}>{d}</div>
                   </div>
                 ))}
               </div>
@@ -48,7 +48,7 @@ export default function NosotrosPage() {
               {[["20+", "Años de experiencia"], ["150+", "Instituciones atendidas"], ["500+", "Profesionales capacitados"], ["98%", "Satisfacción del cliente"]].map(([n, l], i) => (
                 <div key={l} style={{ background: i % 2 === 0 ? "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)" : "linear-gradient(135deg, var(--teal) 0%, #155F6A 100%)", borderRadius: 16, padding: "32px 24px", textAlign: "center" }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: "2.4rem", color: i % 2 === 0 ? "var(--gold)" : "#fff", lineHeight: 1 }}>{n}</div>
-                  <div style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.76)", marginTop: 10, lineHeight: 1.55 }}>{l}</div>
+                  <div style={{ fontSize: "1rem", color: "rgba(255,255,255,0.84)", marginTop: 10, lineHeight: 1.55 }}>{l}</div>
                 </div>
               ))}
             </div>
@@ -74,8 +74,8 @@ export default function NosotrosPage() {
                   {"⚖️" === m.emoji ? <ProfessionalIcon name="compliance" size={28} /> : <ProfessionalIcon name={m.emoji as "technology" | "academy"} size={28} />}
                 </div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", color: "var(--navy)", marginBottom: 6 }}>{m.nombre}</h3>
-                <p style={{ fontSize: "0.92rem", color: m.color, fontWeight: 700, marginBottom: 12 }}>{m.rol}</p>
-                <p style={{ fontSize: "0.98rem", color: "var(--gray-600)", lineHeight: 1.72 }}>{m.exp}</p>
+                <p style={{ fontSize: "0.98rem", color: m.color, fontWeight: 700, marginBottom: 12 }}>{m.rol}</p>
+                <p style={{ fontSize: "1rem", color: "var(--gray-600)", lineHeight: 1.72 }}>{m.exp}</p>
               </div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export default function NosotrosPage() {
             <div style={{ background: "linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 100%)", borderRadius: 18, padding: "40px 36px", color: "#fff", borderTop: "3px solid var(--gold)" }}>
               <div style={{ width: 58, height: 58, marginBottom: 18, borderRadius: 16, background: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--gold-light)" }}><ProfessionalIcon name="chart" size={28} /></div>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", color: "var(--gold)", marginBottom: 14 }}>Nuestra Misión</h3>
-              <p style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.85, fontSize: "1rem" }}>Contribuir al fortalecimiento del sistema financiero salvadoreño brindando servicios de consultoría, auditoría y capacitación que eleven los estándares de cumplimiento y gestión de riesgos.</p>
+              <p style={{ color: "rgba(255,255,255,0.86)", lineHeight: 1.85, fontSize: "1.04rem" }}>Contribuir al fortalecimiento del sistema financiero salvadoreño brindando servicios de consultoría, auditoría y capacitación que eleven los estándares de cumplimiento y gestión de riesgos.</p>
             </div>
             <div style={{ background: "linear-gradient(145deg, var(--teal) 0%, #155F6A 100%)", borderRadius: 18, padding: "40px 36px", color: "#fff", borderTop: "3px solid var(--gold)" }}>
               <div style={{ width: 58, height: 58, marginBottom: 18, borderRadius: 16, background: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}><ProfessionalIcon name="arrow-right" size={28} /></div>
@@ -103,7 +103,7 @@ export default function NosotrosPage() {
       <section style={{ background: "linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%)", padding: "64px 0" }}>
         <div className="container" style={{ textAlign: "center" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "#fff", marginBottom: 14 }}>¿Quieres trabajar con nosotros?</h2>
-          <p style={{ color: "rgba(255,255,255,0.72)", marginBottom: 32, fontSize: "1rem", lineHeight: 1.75 }}>Cuéntanos sobre tu institución y tus necesidades.</p>
+          <p style={{ color: "rgba(255,255,255,0.84)", marginBottom: 32, fontSize: "1.06rem", lineHeight: 1.75 }}>Cuéntanos sobre tu institución y tus necesidades.</p>
           <Link href="/contacto" className="btn-primary" style={{ padding: "14px 36px" }}>Contactar ahora →</Link>
         </div>
       </section>

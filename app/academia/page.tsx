@@ -2,12 +2,12 @@ import Link from "next/link";
 import ProfessionalIcon from "@/components/ProfessionalIcon";
 
 const cursos = [
-  { icon: "chart" as const, titulo: "Cumplimiento Normativo SSF",          nivel: "Intermedio", horas: "16h", precio: "$120", categoria: "Cumplimiento", desc: "Marco normativo vigente, NRP-15, NRP-16, NPSBCR y su aplicación práctica.",           levelColor: "#D4A020" },
-  { icon: "technology" as const, titulo: "Auditoría de Sistemas Core Bancarios", nivel: "Avanzado",   horas: "24h", precio: "$180", categoria: "TI",           desc: "Técnicas de auditoría a sistemas Cobis, T24, Flexcube y otras plataformas.",        levelColor: "#A53A2A" },
-  { icon: "risk" as const, titulo: "Gestión de Riesgos Operacionales",    nivel: "Básico",      horas: "12h", precio: "$90",  categoria: "Riesgos",      desc: "Metodología COSO ERM, identificación y mapeo de riesgos, matrices y planes.",       levelColor: "#1E7A88" },
-  { icon: "certification" as const, titulo: "LAFT: Prevención de Lavado de Dinero", nivel: "Intermedio", horas: "20h", precio: "$150", categoria: "Cumplimiento", desc: "Ley ALD, tipologías, señales de alerta y programa de cumplimiento.",                 levelColor: "#D4A020" },
-  { icon: "automation" as const, titulo: "Automatización con Power Automate",   nivel: "Básico",      horas: "10h", precio: "$80",  categoria: "Tecnología",   desc: "Diseña flujos automáticos para procesos bancarios sin programación.",               levelColor: "#1E7A88" },
-  { icon: "operations" as const, titulo: "Manuales y Políticas Institucionales", nivel: "Básico",      horas: "8h",  precio: "$70",  categoria: "Operaciones",  desc: "Redacción, estructura y gestión documental de políticas y procedimientos.",        levelColor: "#A07814" },
+  { icon: "chart" as const, titulo: "Cumplimiento Normativo SSF",          nivel: "Intermedio", horas: "16h", precio: "$120", categoria: "Cumplimiento", publico: "Oficiales de cumplimiento y auditores internos", desc: "Marco normativo vigente, NRP-15, NRP-16, NPSBCR y su aplicación práctica.",           levelColor: "#D4A020" },
+  { icon: "technology" as const, titulo: "Auditoría de Sistemas Core Bancarios", nivel: "Avanzado",   horas: "24h", precio: "$180", categoria: "TI", publico: "Auditoría TI, tecnología y seguridad", desc: "Técnicas de auditoría a sistemas Cobis, T24, Flexcube y otras plataformas.",        levelColor: "#A53A2A" },
+  { icon: "risk" as const, titulo: "Gestión de Riesgos Operacionales",    nivel: "Básico",      horas: "12h", precio: "$90",  categoria: "Riesgos", publico: "Riesgos, operaciones y control interno", desc: "Metodología COSO ERM, identificación y mapeo de riesgos, matrices y planes.",       levelColor: "#1E7A88" },
+  { icon: "certification" as const, titulo: "LAFT: Prevención de Lavado de Dinero", nivel: "Intermedio", horas: "20h", precio: "$150", categoria: "Cumplimiento", publico: "Cumplimiento, agencias y cajas", desc: "Ley ALD, tipologías, señales de alerta y programa de cumplimiento.",                 levelColor: "#D4A020" },
+  { icon: "automation" as const, titulo: "Automatización con Power Automate",   nivel: "Básico",      horas: "10h", precio: "$80",  categoria: "Tecnología", publico: "Equipos operativos y de mejora continua", desc: "Diseña flujos automáticos para procesos bancarios sin programación.",               levelColor: "#1E7A88" },
+  { icon: "operations" as const, titulo: "Manuales y Políticas Institucionales", nivel: "Básico",      horas: "8h",  precio: "$70",  categoria: "Operaciones", publico: "Áreas de procesos, calidad y cumplimiento", desc: "Redacción, estructura y gestión documental de políticas y procedimientos.",        levelColor: "#A07814" },
 ];
 
 export default function AcademiaPage() {
@@ -20,7 +20,7 @@ export default function AcademiaPage() {
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,3rem)", color: "#fff", marginBottom: 16 }}>
             Capacitación especializada<br />para el sector financiero
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.76)", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.82 }}>
+          <p style={{ color: "rgba(255,255,255,0.84)", fontSize: "1.1rem", maxWidth: 620, lineHeight: 1.82 }}>
             Cursos diseñados por especialistas con experiencia real en instituciones financieras salvadoreñas.
           </p>
           <div style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap" }}>
@@ -57,6 +57,9 @@ export default function AcademiaPage() {
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <div className="section-label">Catálogo</div>
             <h2 className="section-title">Nuestros cursos</h2>
+            <p className="section-desc" style={{ margin: "0 auto", maxWidth: 700 }}>
+              Programas pensados para que tu equipo aplique lo aprendido en cumplimiento, tecnología, riesgos y operaciones desde la primera semana.
+            </p>
           </div>
           <div className="responsive-grid-3">
             {cursos.map(c => (
@@ -65,17 +68,20 @@ export default function AcademiaPage() {
                   <span style={{ width: 46, height: 46, borderRadius: 12, display: "inline-flex", alignItems: "center", justifyContent: "center", background: `${c.levelColor}18`, color: c.levelColor }}>
                     <ProfessionalIcon name={c.icon} size={22} />
                   </span>
-                  <span style={{ fontSize: "0.8rem", fontWeight: 700, padding: "5px 12px", borderRadius: 100, background: `${c.levelColor}18`, color: c.levelColor }}>{c.nivel}</span>
+                  <span style={{ fontSize: "0.86rem", fontWeight: 700, padding: "5px 12px", borderRadius: 100, background: `${c.levelColor}18`, color: c.levelColor }}>{c.nivel}</span>
                 </div>
-                <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, display: "block" }}>{c.categoria}</span>
+                <span style={{ fontSize: "0.86rem", fontWeight: 700, color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10, display: "block" }}>{c.categoria}</span>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", color: "var(--navy)", marginBottom: 10, lineHeight: 1.35 }}>{c.titulo}</h3>
-                <p style={{ fontSize: "0.98rem", color: "var(--gray-600)", lineHeight: 1.72, marginBottom: 20 }}>{c.desc}</p>
+                <p style={{ fontSize: "0.98rem", color: "var(--gray-600)", lineHeight: 1.72, marginBottom: 14 }}>{c.desc}</p>
+                <p style={{ fontSize: "0.96rem", color: "var(--navy)", lineHeight: 1.65, marginBottom: 20, fontWeight: 600 }}>
+                  Ideal para: {c.publico}
+                </p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--gray-100)", paddingTop: 16 }}>
                   <div>
                     <span style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", color: "var(--navy)" }}>{c.precio}</span>
                     <span style={{ fontSize: "0.9rem", color: "var(--gray-600)", marginLeft: 8 }}>· {c.horas}</span>
                   </div>
-                  <Link href="/prueba-gratis" className="btn-primary" style={{ padding: "10px 20px", fontSize: "0.9rem" }}>Inscribirme</Link>
+                  <Link href="/prueba-gratis" className="btn-primary" style={{ padding: "10px 20px", fontSize: "0.96rem" }}>Inscribirme</Link>
                 </div>
               </div>
             ))}

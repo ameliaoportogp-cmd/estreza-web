@@ -45,7 +45,7 @@ export default function ContactoPage() {
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--white)", marginBottom: 16 }}>
             Contáctanos
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.05rem", maxWidth: 500, lineHeight: 1.75 }}>
+          <p style={{ color: "rgba(255,255,255,0.84)", fontSize: "1.1rem", maxWidth: 560, lineHeight: 1.78 }}>
             Cuéntanos sobre tu institución y te orientamos sin compromiso.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ContactoPage() {
                       />
                     </div>
                     <div>
-                      <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--gray-600)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{label as string}</div>
+                      <div style={{ fontSize: "0.9rem", fontWeight: 700, color: "var(--gray-600)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{label as string}</div>
                       <div style={{ fontSize: "1rem", color: "var(--gray-800)", lineHeight: 1.7 }}>{value as string}</div>
                     </div>
                   </div>
@@ -86,7 +86,7 @@ export default function ContactoPage() {
 
               <div style={{ background: "var(--navy)", borderRadius: 14, padding: "28px 24px", color: "var(--white)" }}>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "var(--gold)", marginBottom: 12 }}>Consulta gratuita</h3>
-                <p style={{ fontSize: "0.98rem", color: "rgba(255,255,255,0.76)", lineHeight: 1.78 }}>
+                <p style={{ fontSize: "1.02rem", color: "rgba(255,255,255,0.84)", lineHeight: 1.78 }}>
                   Agenda una sesión de 30 minutos con uno de nuestros especialistas. Sin costo y sin compromiso.
                 </p>
               </div>
@@ -132,7 +132,7 @@ export default function ContactoPage() {
                       <ContactField label="Institución" id="institucion" value={form.institucion} autoComplete="organization" onChange={(v) => updateForm("institucion", v)} />
                     </div>
                     <div>
-                      <label htmlFor="mensaje" style={{ display: "block", fontSize: "0.92rem", fontWeight: 600, color: "var(--gray-800)", marginBottom: 8 }}>
+                      <label htmlFor="mensaje" style={{ display: "block", fontSize: "0.98rem", fontWeight: 600, color: "var(--gray-800)", marginBottom: 8 }}>
                         Mensaje <span style={{ color: "var(--gold)" }}>*</span>
                       </label>
                       <textarea
@@ -142,8 +142,8 @@ export default function ContactoPage() {
                         className="textarea-base"
                       />
                     </div>
-                    {error && <p style={{ color: "#b42318", fontSize: "0.92rem", lineHeight: 1.6 }}>{error}</p>}
-                    <button type="submit" className="btn-primary" style={{ padding: "14px", justifyContent: "center", fontSize: "0.95rem" }}>
+                    {error && <p style={{ color: "#b42318", fontSize: "0.98rem", lineHeight: 1.6 }}>{error}</p>}
+                    <button type="submit" className="btn-primary" style={{ padding: "15px", justifyContent: "center", fontSize: "1rem" }}>
                       Enviar mensaje →
                     </button>
                   </form>
@@ -160,7 +160,7 @@ export default function ContactoPage() {
 function ContactField({ label, id, type = "text", value, onChange, required, autoComplete, minLength, pattern }: { label: string; id: string; type?: string; value: string; onChange: (v: string) => void; required?: boolean; autoComplete?: string; minLength?: number; pattern?: string }) {
   return (
     <div>
-      <label htmlFor={id} style={{ display: "block", fontSize: "0.92rem", fontWeight: 600, color: "var(--gray-800)", marginBottom: 8 }}>
+      <label htmlFor={id} style={{ display: "block", fontSize: "0.98rem", fontWeight: 600, color: "var(--gray-800)", marginBottom: 8 }}>
         {label}{required && <span style={{ color: "var(--gold)", marginLeft: 2 }}>*</span>}
       </label>
       <input

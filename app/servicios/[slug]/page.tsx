@@ -133,10 +133,10 @@ export default async function ServicioDetallePage({ params }: { params: Promise<
         <div className="container" style={{ position: "relative", zIndex: 1, maxWidth: 1100 }}>
           <div className="chip-teal" style={{ marginBottom: 18 }}>Servicio especializado</div>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.1rem, 4vw, 3.4rem)", color: "#fff", marginBottom: 16 }}>{servicio.titulo}</h1>
-          <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.05rem", lineHeight: 1.85, maxWidth: 720, marginBottom: 30 }}>{servicio.resumen}</p>
+          <p style={{ color: "rgba(255,255,255,0.84)", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 760, marginBottom: 30 }}>{servicio.resumen}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             {servicio.impacto.map((item) => (
-              <span key={item} style={{ padding: "10px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.14)", background: "rgba(255,255,255,0.08)", fontSize: "0.85rem", color: "rgba(255,255,255,0.9)" }}>
+              <span key={item} style={{ padding: "10px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,0.16)", background: "rgba(255,255,255,0.1)", fontSize: "0.94rem", color: "rgba(255,255,255,0.94)" }}>
                 {item}
               </span>
             ))}
@@ -153,7 +153,7 @@ export default async function ServicioDetallePage({ params }: { params: Promise<
               </div>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", color: "var(--navy)", marginBottom: 12 }}>Qué resolvemos</h2>
               <p style={{ color: "var(--gray-600)", lineHeight: 1.85, marginBottom: 24 }}>{servicio.idealPara}</p>
-              <h3 style={{ color: servicio.color, fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Entregables</h3>
+              <h3 style={{ color: servicio.color, fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 14 }}>Entregables</h3>
               <ul style={{ listStyle: "none", display: "grid", gap: 12, color: "var(--gray-600)" }}>
                 {servicio.entregables.map((item) => (
                   <li key={item} style={{ display: "flex", gap: 12, alignItems: "flex-start", lineHeight: 1.8 }}>
@@ -188,13 +188,13 @@ export default async function ServicioDetallePage({ params }: { params: Promise<
                     boxShadow: "var(--shadow-sm)",
                   }}
                 >
-                  <div style={{ fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.72)", marginBottom: 14 }}>
+                  <div style={{ fontSize: "0.88rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.82)", marginBottom: 14 }}>
                     Preparación regulatoria
                   </div>
                   <h4 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", color: "var(--white)", marginBottom: 12, lineHeight: 1.2 }}>
                     Evidencia clara para una supervisión con mejor control documental.
                   </h4>
-                  <p style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7, fontSize: "0.9rem", marginBottom: 18 }}>
+                  <p style={{ color: "rgba(255,255,255,0.84)", lineHeight: 1.7, fontSize: "0.98rem", marginBottom: 18 }}>
                     Diseñado para instituciones que necesitan ordenar políticas, manuales, matrices y soportes antes de una revisión de la SSF o el BCR.
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
@@ -206,7 +206,7 @@ export default async function ServicioDetallePage({ params }: { params: Promise<
                           borderRadius: 999,
                           background: "rgba(255,255,255,0.1)",
                           border: "1px solid rgba(255,255,255,0.16)",
-                          fontSize: "0.8rem",
+                          fontSize: "0.9rem",
                           color: "rgba(255,255,255,0.92)",
                           fontWeight: 600,
                         }}
@@ -217,14 +217,14 @@ export default async function ServicioDetallePage({ params }: { params: Promise<
                   </div>
                 </div>
               )}
-              <div style={{ fontSize: "0.8rem", fontWeight: 700, color: servicio.color, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Resultado esperado</div>
+              <div style={{ fontSize: "0.88rem", fontWeight: 700, color: servicio.color, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Resultado esperado</div>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", color: "var(--navy)", marginBottom: 12 }}>Un proyecto claro y accionable</h3>
               <p style={{ color: "var(--gray-600)", lineHeight: 1.8, marginBottom: 20 }}>
                 Trabajamos para que el equipo interno pueda sostener el avance después de nuestra intervención, no solo para entregar un informe.
               </p>
               <div style={{ display: "grid", gap: 10 }}>
                 {servicio.impacto.map((item) => (
-                  <div key={item} style={{ padding: "12px 14px", borderRadius: 10, background: "var(--white)", border: "1px solid var(--gray-100)", color: "var(--gray-800)", fontSize: "0.9rem", fontWeight: 600 }}>
+                  <div key={item} style={{ padding: "12px 14px", borderRadius: 10, background: "var(--white)", border: "1px solid var(--gray-100)", color: "var(--gray-800)", fontSize: "0.98rem", fontWeight: 600 }}>
                     {item}
                   </div>
                 ))}
@@ -256,7 +256,7 @@ export default async function ServicioDetallePage({ params }: { params: Promise<
       <section style={{ background: "linear-gradient(135deg, var(--teal) 0%, #155F6A 100%)", padding: "62px 0" }}>
         <div className="container" style={{ maxWidth: 1000, textAlign: "center" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.4rem)", color: "#fff", marginBottom: 14 }}>¿Quieres evaluar si este servicio aplica para tu institución?</h2>
-          <p style={{ color: "rgba(255,255,255,0.72)", maxWidth: 620, margin: "0 auto 28px", lineHeight: 1.8 }}>
+          <p style={{ color: "rgba(255,255,255,0.84)", maxWidth: 620, margin: "0 auto 28px", lineHeight: 1.8 }}>
             Podemos revisar tu situación actual y orientarte sobre el mejor punto de entrada sin compromiso.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>

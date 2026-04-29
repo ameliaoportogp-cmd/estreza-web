@@ -26,6 +26,24 @@ const testimonios = [
   { texto: "La Academia capacitó a todo nuestro equipo de riesgos en tiempo récord. Los cursos están perfectamente alineados a la realidad local.", cargo: "Jefe de Gestión de Riesgos", empresa: "Financiera Nacional" },
 ];
 
+const diferenciales = [
+  {
+    icon: "specialist" as const,
+    titulo: "Especialización local real",
+    desc: "No trabajamos con marcos genéricos. Adaptamos cada intervención a la normativa y práctica supervisora de El Salvador.",
+  },
+  {
+    icon: "audit" as const,
+    titulo: "Visión técnica y regulatoria",
+    desc: "Integramos cumplimiento, auditoría TI, procesos y riesgos para que la institución avance con una sola hoja de ruta.",
+  },
+  {
+    icon: "academy" as const,
+    titulo: "Transferencia al equipo interno",
+    desc: "Nuestro objetivo no es solo entregar informes, sino dejar capacidades instaladas para sostener el cambio.",
+  },
+];
+
 export default function HomePage() {
   const prefersReducedMotion = useReducedMotion();
 
@@ -68,19 +86,19 @@ export default function HomePage() {
               </motion.p>
 
               <motion.div variants={fadeInUp(prefersReducedMotion, 0.2)} style={{ display:"flex", gap:14, flexWrap:"wrap", marginBottom:48 }}>
-                <Link href="/prueba-gratis" className="btn-primary" style={{ padding:"15px 36px", fontSize:"0.95rem" }}>
+                <Link href="/prueba-gratis" className="btn-primary" style={{ padding:"15px 36px", fontSize:"1rem" }}>
                   Empieza gratis →
                 </Link>
-                <Link href="/servicios" style={{ display:"inline-flex", alignItems:"center", gap:8, padding:"15px 32px", fontSize:"0.95rem", fontWeight:600, color:"rgba(255,255,255,0.8)", border:"1.5px solid rgba(255,255,255,0.18)", borderRadius:9, transition:"var(--transition)" }}>
+                <Link href="/servicios" style={{ display:"inline-flex", alignItems:"center", gap:8, padding:"15px 32px", fontSize:"1rem", fontWeight:600, color:"rgba(255,255,255,0.9)", border:"1.5px solid rgba(255,255,255,0.22)", borderRadius:9, transition:"var(--transition)" }}>
                   Ver servicios
                 </Link>
               </motion.div>
 
               {/* Regulators */}
               <motion.div variants={fadeInUp(prefersReducedMotion, 0.26)} style={{ display:"flex", alignItems:"center", gap:12, flexWrap:"wrap" }}>
-                <span style={{ fontSize:"0.75rem", color:"rgba(255,255,255,0.3)", textTransform:"uppercase", letterSpacing:"0.1em" }}>Conocemos la regulación de</span>
+                <span style={{ fontSize:"0.84rem", color:"rgba(255,255,255,0.62)", textTransform:"uppercase", letterSpacing:"0.1em" }}>Conocemos la regulación de</span>
                 {["SSF","BCR","SUGEF"].map(r => (
-                  <span key={r} style={{ fontSize:"0.88rem", fontWeight:700, color:"rgba(255,255,255,0.74)", padding:"5px 13px", border:"1px solid rgba(255,255,255,0.14)", borderRadius:6, letterSpacing:"0.05em" }}>{r}</span>
+                  <span key={r} style={{ fontSize:"0.94rem", fontWeight:700, color:"rgba(255,255,255,0.88)", padding:"6px 13px", border:"1px solid rgba(255,255,255,0.18)", borderRadius:6, letterSpacing:"0.05em" }}>{r}</span>
                 ))}
               </motion.div>
             </motion.div>
@@ -92,7 +110,7 @@ export default function HomePage() {
               transition={prefersReducedMotion ? { duration: 0.2 } : { opacity: { duration: 0.55 }, x: { duration: 0.55 }, rotate: { duration: 0.55 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 } }}
               style={{ background:"linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.05) 100%)", border:"1px solid rgba(255,255,255,0.14)", borderRadius:20, padding:"36px 32px", backdropFilter:"blur(12px)", boxShadow:"0 24px 64px rgba(0,0,0,0.25)" }}
             >
-              <div style={{ fontSize:"0.78rem", fontWeight:700, color:"var(--gold-light)", textTransform:"uppercase", letterSpacing:"0.12em", marginBottom:22 }}>Acceso Gratuito 30 días</div>
+              <div style={{ fontSize:"0.86rem", fontWeight:700, color:"var(--gold-light)", textTransform:"uppercase", letterSpacing:"0.12em", marginBottom:22 }}>Acceso Gratuito 30 días</div>
               <motion.div variants={staggerContainer} initial="hidden" animate="show" style={{ display:"flex", flexDirection:"column", gap:14, marginBottom:28 }}>
                 {[
                   ["audit","Diagnóstico de cumplimiento normativo"],
@@ -110,7 +128,7 @@ export default function HomePage() {
               <Link href="/prueba-gratis" className="btn-primary" style={{ width:"100%", justifyContent:"center", padding:"14px" }}>
                 Crear cuenta gratis
               </Link>
-              <p style={{ textAlign:"center", marginTop:12, fontSize:"0.88rem", color:"rgba(255,255,255,0.54)", lineHeight: 1.6 }}>Sin tarjeta de crédito · Cancela cuando quieras</p>
+              <p style={{ textAlign:"center", marginTop:12, fontSize:"0.94rem", color:"rgba(255,255,255,0.76)", lineHeight: 1.6 }}>Sin tarjeta de crédito · Cancela cuando quieras</p>
             </motion.div>
 
           </div>
@@ -128,9 +146,35 @@ export default function HomePage() {
                 <motion.div whileHover={prefersReducedMotion ? undefined : { y: -6, scale: 1.02 }} style={{ textAlign:"center", padding:"0 8px", borderRight: i<3 ? "1px solid rgba(255,255,255,0.07)" : "none" }}>
                 <div style={{ width:50, height:50, margin:"0 auto 10px", borderRadius:14, background:"rgba(255,255,255,0.06)", border:"1px solid rgba(255,255,255,0.1)", color:"var(--gold-light)", display:"flex", alignItems:"center", justifyContent:"center" }}><ProfessionalIcon name={s.icon} size={24} /></div>
                 <div style={{ fontFamily:"var(--font-display)", fontSize:"2.6rem", background:"linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", lineHeight:1, marginBottom:6 }}>{s.numero}</div>
-                <div style={{ fontSize:"0.92rem", color:"rgba(255,255,255,0.7)", lineHeight:1.55 }}>{s.label}</div>
+                <div style={{ fontSize:"0.98rem", color:"rgba(255,255,255,0.82)", lineHeight:1.55 }}>{s.label}</div>
                 </motion.div>
               </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--white)", padding: "30px 0 26px", borderBottom: "1px solid var(--gray-100)" }}>
+        <div className="container" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 18 }}>
+          <div style={{ fontSize: "0.96rem", color: "var(--gray-600)", fontWeight: 600 }}>
+            Equipos a los que acompañamos con más frecuencia
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+            {["Bancos", "Cooperativas", "Financieras", "Seguros", "Oficiales de Cumplimiento", "Auditoría TI"].map((item) => (
+              <span
+                key={item}
+                style={{
+                  padding: "9px 14px",
+                  borderRadius: 999,
+                  border: "1px solid var(--gray-100)",
+                  background: "var(--gray-50)",
+                  color: "var(--navy)",
+                  fontSize: "0.96rem",
+                  fontWeight: 600,
+                }}
+              >
+                {item}
+              </span>
             ))}
           </div>
         </div>
@@ -176,13 +220,40 @@ export default function HomePage() {
                 <motion.div whileHover={prefersReducedMotion ? undefined : { x: 8 }} style={{ background:"var(--navy-deep)", borderRadius:14, padding:"24px 24px", display:"flex", gap:18, alignItems:"flex-start", border:"1px solid rgba(255,255,255,0.06)" }}>
                   <div style={{ width:46, height:46, background:item.bg, border:`1px solid ${item.border}`, borderRadius:11, display:"flex", alignItems:"center", justifyContent:"center", color:item.color, flexShrink:0 }}><ProfessionalIcon name={item.icon} size={21} /></div>
                   <div>
-                    <h4 style={{ fontWeight:700, color:"#fff", marginBottom:5, fontSize:"0.95rem" }}>{item.titulo}</h4>
-                    <p style={{ fontSize:"0.97rem", color:"rgba(255,255,255,0.72)", lineHeight:1.72 }}>{item.desc}</p>
+                    <h4 style={{ fontWeight:700, color:"#fff", marginBottom:5, fontSize:"1rem" }}>{item.titulo}</h4>
+                    <p style={{ fontSize:"1rem", color:"rgba(255,255,255,0.84)", lineHeight:1.72 }}>{item.desc}</p>
                   </div>
                 </motion.div>
                 </Reveal>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ background: "var(--gray-50)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <div className="section-label">Por qué Destreza</div>
+            <h2 className="section-title" style={{ margin: "0 auto 12px" }}>Más que consultoría: claridad para decidir y ejecutar</h2>
+            <p className="section-desc" style={{ margin: "0 auto", maxWidth: 700 }}>
+              Trabajamos para que la Alta Dirección entienda prioridades, el área técnica sepa qué hacer y el equipo operativo pueda sostener los cambios.
+            </p>
+          </div>
+          <div className="responsive-grid-3">
+            {diferenciales.map((item) => (
+              <div key={item.titulo} className="card" style={{ padding: "32px 28px", borderTop: "3px solid var(--teal)" }}>
+                <div style={{ width: 50, height: 50, borderRadius: 14, background: "var(--teal-soft)", border: "1px solid rgba(46,124,138,0.2)", color: "var(--teal)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18 }}>
+                  <ProfessionalIcon name={item.icon} size={22} />
+                </div>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "var(--navy)", marginBottom: 10, lineHeight: 1.3 }}>
+                  {item.titulo}
+                </h3>
+                <p style={{ fontSize: "1rem", color: "var(--gray-600)", lineHeight: 1.75 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -229,17 +300,17 @@ export default function HomePage() {
       <section style={{ background:"linear-gradient(135deg, var(--teal) 0%, #155F6A 100%)", padding:"64px 0" }}>
         <div className="container" style={{ textAlign:"center" }}>
           <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(255,255,255,0.12)", border:"1px solid rgba(255,255,255,0.2)", borderRadius:100, padding:"5px 16px", marginBottom:20 }}>
-            <span style={{ fontSize:"0.75rem", fontWeight:700, color:"rgba(255,255,255,0.9)", textTransform:"uppercase", letterSpacing:"0.1em" }}>Nuestros Clientes</span>
+            <span style={{ fontSize:"0.84rem", fontWeight:700, color:"rgba(255,255,255,0.94)", textTransform:"uppercase", letterSpacing:"0.1em" }}>Nuestros Clientes</span>
           </div>
           <h2 style={{ fontFamily:"var(--font-display)", fontSize:"clamp(1.8rem,3vw,2.4rem)", color:"#fff", marginBottom:14 }}>
             Trabajamos con todo el sistema financiero
           </h2>
-          <p style={{ color:"rgba(255,255,255,0.65)", marginBottom:44, maxWidth:480, margin:"0 auto 44px" }}>
+          <p style={{ color:"rgba(255,255,255,0.84)", marginBottom:44, maxWidth:520, margin:"0 auto 44px", fontSize:"1.02rem" }}>
             Desde grandes bancos hasta microfinancieras. Cualquier entidad bajo supervisión de la SSF o el BCR.
           </p>
           <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"center", gap:12 }}>
             {["Bancos Comerciales","Cooperativas de Ahorro","Sociedades de Seguros","Casas de Cambio","Emisores de Valores","Financieras y Microfinancieras"].map(c => (
-              <div key={c} style={{ padding:"12px 22px", border:"1.5px solid rgba(255,255,255,0.25)", borderRadius:100, fontSize:"0.95rem", color:"rgba(255,255,255,0.9)", background:"rgba(255,255,255,0.08)", fontWeight:500 }}>
+              <div key={c} style={{ padding:"12px 22px", border:"1.5px solid rgba(255,255,255,0.25)", borderRadius:100, fontSize:"1rem", color:"rgba(255,255,255,0.94)", background:"rgba(255,255,255,0.08)", fontWeight:500 }}>
                 {c}
               </div>
             ))}
@@ -268,10 +339,10 @@ export default function HomePage() {
               }}>
                 {i===1 && <div style={{ position:"absolute", top:0, left:0, right:0, height:3, background:"linear-gradient(90deg, var(--teal) 0%, var(--gold) 100%)", borderRadius:"18px 18px 0 0" }} />}
                 <div style={{ fontSize:"2.8rem", fontFamily:"Georgia,serif", lineHeight:1, color: i===1 ? "var(--gold)" : "var(--gray-200)", marginBottom:18, marginTop:-6 }}>&ldquo;</div>
-                <p style={{ fontSize:"0.95rem", color: i===1 ? "rgba(255,255,255,0.8)" : "var(--gray-600)", lineHeight:1.8, marginBottom:24, fontStyle:"italic" }}>{t.texto}</p>
+                <p style={{ fontSize:"1rem", color: i===1 ? "rgba(255,255,255,0.88)" : "var(--gray-600)", lineHeight:1.8, marginBottom:24, fontStyle:"italic" }}>{t.texto}</p>
                 <div style={{ borderTop:`1px solid ${i===1 ? "rgba(255,255,255,0.1)" : "var(--gray-200)"}`, paddingTop:18 }}>
-                  <div style={{ fontWeight:700, fontSize:"0.95rem", color: i===1 ? "#fff" : "var(--navy)" }}>{t.cargo}</div>
-                  <div style={{ fontSize:"0.9rem", color: i===1 ? "rgba(255,255,255,0.76)" : "var(--gray-600)", marginTop:4, lineHeight:1.55 }}>{t.empresa}</div>
+                  <div style={{ fontWeight:700, fontSize:"1rem", color: i===1 ? "#fff" : "var(--navy)" }}>{t.cargo}</div>
+                  <div style={{ fontSize:"0.96rem", color: i===1 ? "rgba(255,255,255,0.84)" : "var(--gray-600)", marginTop:4, lineHeight:1.55 }}>{t.empresa}</div>
                 </div>
               </motion.div>
               </Reveal>
@@ -301,7 +372,7 @@ export default function HomePage() {
                   <div style={{ flexShrink:0, width:44, height:44, borderRadius:12, background:"linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%)", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"var(--font-display)", fontSize:"0.88rem", color:"#fff", fontWeight:700, zIndex:1, boxShadow:"var(--shadow-teal)" }}>{p.num}</div>
                   <div style={{ paddingBottom: i < arr.length-1 ? 32 : 0 }}>
                     <h4 style={{ fontWeight:700, color:"var(--navy)", marginBottom:5, fontSize:"1rem" }}>{p.titulo}</h4>
-                    <p style={{ fontSize:"0.9rem", color:"var(--gray-600)", lineHeight:1.65 }}>{p.desc}</p>
+                    <p style={{ fontSize:"0.98rem", color:"var(--gray-600)", lineHeight:1.65 }}>{p.desc}</p>
                   </div>
                 </div>
               ))}
@@ -318,15 +389,15 @@ export default function HomePage() {
               <div style={{ position:"relative", zIndex:1 }}>
                 <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:"rgba(30,122,136,0.15)", border:"1px solid rgba(30,122,136,0.35)", borderRadius:100, padding:"5px 14px", marginBottom:22 }}>
                   <span style={{ width:6, height:6, borderRadius:"50%", background:"#22c55e", display:"inline-block" }} />
-                  <span style={{ fontSize:"0.73rem", fontWeight:700, color:"var(--teal-light)", letterSpacing:"0.1em" }}>ACCESO INMEDIATO</span>
+                  <span style={{ fontSize:"0.82rem", fontWeight:700, color:"var(--teal-light)", letterSpacing:"0.1em" }}>ACCESO INMEDIATO</span>
                 </div>
                 <h3 style={{ fontFamily:"var(--font-display)", fontSize:"1.65rem", marginBottom:10, lineHeight:1.3 }}>30 días de acceso gratuito</h3>
-                <p style={{ color:"rgba(255,255,255,0.5)", fontSize:"0.9rem", marginBottom:30, lineHeight:1.75 }}>
+                <p style={{ color:"rgba(255,255,255,0.82)", fontSize:"1rem", marginBottom:30, lineHeight:1.75 }}>
                   Explora herramientas de cumplimiento, auditoría y capacitación sin compromiso.
                 </p>
                 <div style={{ display:"flex", flexDirection:"column", gap:12, marginBottom:32 }}>
                   {["Sin tarjeta de crédito requerida","Cancela en cualquier momento","Soporte incluido","Normativas SSF/BCR actualizadas"].map(item => (
-                    <div key={item} style={{ display:"flex", gap:10, alignItems:"center", fontSize:"0.88rem", color:"rgba(255,255,255,0.72)" }}>
+                    <div key={item} style={{ display:"flex", gap:10, alignItems:"center", fontSize:"0.96rem", color:"rgba(255,255,255,0.84)" }}>
                       <span style={{ color:"var(--gold-light)", display:"inline-flex" }}><ProfessionalIcon name="check" size={15} /></span>{item}
                     </div>
                   ))}
@@ -362,15 +433,15 @@ export default function HomePage() {
               <motion.div whileHover={prefersReducedMotion ? undefined : { y: -8 }} className="card" style={{ borderTop:`3px solid ${c.levelColor}` }}>
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:18 }}>
                   <span style={{ width:46, height:46, borderRadius:12, display:"inline-flex", alignItems:"center", justifyContent:"center", background:`${c.levelColor}18`, color:c.levelColor }}><ProfessionalIcon name={c.icon} size={22} /></span>
-                  <span style={{ fontSize:"0.74rem", fontWeight:700, padding:"4px 12px", borderRadius:100, background:`${c.levelColor}18`, color:c.levelColor }}>{c.nivel}</span>
+                  <span style={{ fontSize:"0.82rem", fontWeight:700, padding:"4px 12px", borderRadius:100, background:`${c.levelColor}18`, color:c.levelColor }}>{c.nivel}</span>
                 </div>
                 <h3 style={{ fontFamily:"var(--font-display)", fontSize:"1.05rem", color:"var(--navy)", marginBottom:20, lineHeight:1.35 }}>{c.titulo}</h3>
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", borderTop:"1px solid var(--gray-100)", paddingTop:18 }}>
                   <div>
                     <span style={{ fontFamily:"var(--font-display)", fontSize:"1.5rem", color:"var(--navy)" }}>{c.precio}</span>
-                    <span style={{ fontSize:"0.78rem", color:"var(--gray-400)", marginLeft:6 }}>· {c.horas}</span>
+                    <span style={{ fontSize:"0.9rem", color:"var(--gray-600)", marginLeft:6 }}>· {c.horas}</span>
                   </div>
-                  <Link href="/prueba-gratis" className="btn-primary" style={{ padding:"9px 18px", fontSize:"0.82rem" }}>Inscribirse</Link>
+                  <Link href="/prueba-gratis" className="btn-primary" style={{ padding:"10px 18px", fontSize:"0.92rem" }}>Inscribirse</Link>
                 </div>
               </motion.div>
               </Reveal>
@@ -401,14 +472,14 @@ export default function HomePage() {
           <motion.h2 variants={fadeInUp(prefersReducedMotion, 0.06)} style={{ fontFamily:"var(--font-display)", fontSize:"clamp(2rem,4vw,3.2rem)", color:"#fff", marginBottom:18, lineHeight:1.2 }}>
             ¿Tu institución está lista para <br />la próxima supervisión?
           </motion.h2>
-          <motion.p variants={fadeInUp(prefersReducedMotion, 0.12)} style={{ color:"rgba(255,255,255,0.5)", fontSize:"1.05rem", maxWidth:500, margin:"0 auto 44px", lineHeight:1.85 }}>
+          <motion.p variants={fadeInUp(prefersReducedMotion, 0.12)} style={{ color:"rgba(255,255,255,0.84)", fontSize:"1.1rem", maxWidth:560, margin:"0 auto 44px", lineHeight:1.85 }}>
             Agenda 30 minutos con un especialista. Identificamos tus brechas y te decimos exactamente qué hacer.
           </motion.p>
           <motion.div variants={fadeInUp(prefersReducedMotion, 0.18)} style={{ display:"flex", gap:14, justifyContent:"center", flexWrap:"wrap" }}>
             <Link href="/prueba-gratis" className="btn-primary" style={{ padding:"16px 40px", fontSize:"1rem" }}>
               Empezar gratis →
             </Link>
-            <Link href="/contacto" style={{ display:"inline-flex", alignItems:"center", gap:8, padding:"16px 36px", fontSize:"1rem", fontWeight:600, color:"rgba(255,255,255,0.75)", border:"1.5px solid rgba(255,255,255,0.15)", borderRadius:9 }}>
+            <Link href="/contacto" style={{ display:"inline-flex", alignItems:"center", gap:8, padding:"16px 36px", fontSize:"1rem", fontWeight:600, color:"rgba(255,255,255,0.92)", border:"1.5px solid rgba(255,255,255,0.2)", borderRadius:9 }}>
               Hablar con un especialista
             </Link>
           </motion.div>
